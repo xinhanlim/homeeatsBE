@@ -16,7 +16,7 @@ services:
   backend:
     build:
       context: ..
-      dockerfile: Dockerfile
+      dockerfile: .devcontainer/Dockerfile
     container_name: homeeats-backend
     volumes:
       - ..:/workspace:cached
