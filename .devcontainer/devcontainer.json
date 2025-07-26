@@ -1,9 +1,9 @@
 {
-    "name": "HomeEats Dev",
-    "dockerComposeFile": "docker-compose.yml",
-    "service": "backend",
-    "workspaceFolder": "/workspace",
-    "forwardPorts": [3500, 3306],
-    "remoteUser": "node",
-    "postCreateCommand": "npm install"
-  }
+  "name": "HomeEats Dev",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "backend",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [3500, 3306],
+  "remoteUser": "node",
+  "postCreateCommand": "apt-get update && apt-get install -y git-lfs && git lfs install && npm install"
+}
