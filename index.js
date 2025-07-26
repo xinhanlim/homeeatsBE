@@ -1,11 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
+const productRouter = require ('./routes/productRoute')
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
+app.use('/products', productRouter);
+
 
 app.get('/db-test', (req, res) => {
   try{
