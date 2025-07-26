@@ -1,0 +1,9 @@
+{
+    "name": "HomeEats Dev",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "backend",
+    "workspaceFolder": "/workspace",
+    "forwardPorts": [3400, 3306],
+    "remoteUser": "node",
+    "postCreateCommand": "npm install"
+  }
