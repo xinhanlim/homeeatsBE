@@ -1,17 +1,32 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../database');
+const productService = require('../services/productService')
 
-router.get('/', (req,res) => {
-    res.json({
-        "message" : "Getting All Products"
-    })
+router.get('/', async (req,res) => {
+    try{
+        const products = await productService.getAllProducts();
+        console.log(products);
+        res.json(products);
+    }catch(e){
+        console.log(e);
+        res.status(500).json({
+            "message":e.message
+        })
+    }
 })
 
-router.get('/:id', (req,res) => {
-    res.json({
-        "message": "Getting An Product by Id"
-    })
+router.get('/:id', async (req,res) => {
+    try{
+        const products = await productService.getProductsById(req.params.id);
+        console.log(products);
+        res.json(products);
+    }catch(e){
+        console.log(e);
+        res.status(500).json({
+            "message":e.message
+        })
+    }
 })
 
 module.exports = router;

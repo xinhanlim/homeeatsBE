@@ -4,8 +4,8 @@ async function getAllProducts(){
     return await productsData.getAllProducts();
 }
 
-async function getProductsById(id){
-    const product = await productsData.getProductsById(id);
+async function getProductsById(product_id){
+    const product = await productsData.getProductsById(product_id);
     if(!product) {
         throw new Error('product not found');
     }

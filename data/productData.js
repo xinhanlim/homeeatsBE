@@ -6,8 +6,8 @@ async function getAllProducts() {
     return rows;
 }
 
-async function getProductsById(id){
-    const [rows] = await pool.query('select * from products WHERE id = ?', [id]);
+async function getProductsById(product_id){
+    const [rows] = await pool.query('select * from products WHERE product_id = ?', [product_id]);
     return rows[0];
 }
 
