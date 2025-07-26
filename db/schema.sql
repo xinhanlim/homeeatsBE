@@ -34,6 +34,7 @@ CREATE TABLE products (
   description TEXT,
   price DECIMAL(10,2),
   available BOOLEAN DEFAULT TRUE,
+  image_url VARCHAR(255),
   FOREIGN KEY (store_id) REFERENCES stores(store_id)
 );
 
